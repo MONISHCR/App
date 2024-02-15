@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".onboarding.GettingStartedActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/celebration"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="35dp"
+        android:id="@+id/celebrationImage"
+        android:contentDescription="@string/app_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_stumate"
+        android:textColor="@color/colorBlack"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:layout_below="@id/celebrationImage" />
+
+    <TextView
+        android:layout_below="@id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/struck_searching_your_notes_for_the_exam_or_forgot_to_submit_the_assignment_on_time_don_t_worry_we_are_there_to_help_you"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:padding="12dp"
+        android:id="@+id/descriptionText"
+        android:textSize="16sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:id="@+id/btnGetStarted"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_below="@id/descriptionText"
+            android:background="@drawable/rounded_button"
+            android:layout_margin="20dp"
+            android:text="Get Started !"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+</androidx.core.widget.NestedScrollView>

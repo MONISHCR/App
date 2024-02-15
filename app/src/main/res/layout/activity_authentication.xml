@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey"
+    tools:context=".onboarding.GettingStartedActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/welcomeAppBar"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        app:elevation="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/welcomeToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:id="@+id/welcomeBackButton"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1"
+                    android:visibility="gone"
+                    app:tint="@color/colorPrimary"
+                    android:contentDescription="@string/backbutton"
+                    android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_weight="1.9"
+                    android:gravity="center_vertical"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/excited_to_be_a_part_of_stumate"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/cabin"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/welcomeAppBar"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:padding="25dp"
+        android:background="@drawable/semi_circle"
+        android:orientation="vertical">
+
+
+
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/here_to_get_nwelcome"
+            android:textColor="@color/colorBlack"
+            android:textSize="28sp"
+            android:id="@+id/welcomeText"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_your_email_id"
+            app:endIconMode="clear_text"
+            android:id="@+id/edtEmailID"
+            android:background="@color/colorWhite"
+            android:layout_below="@id/welcomeText"
+            app:endIconTint="#000"
+            android:layout_marginTop="25dp"
+            app:errorEnabled="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            app:hintTextColor="#000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/editEmailIn"
+                android:inputType="text"
+                android:background="@color/colorWhite"
+                android:textColor="#000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_password"
+            android:layout_below="@id/edtEmailID"
+            android:layout_marginTop="25dp"
+            android:id="@+id/edtPassword"
+            app:endIconMode="password_toggle"
+            app:endIconTint="#000"
+            app:hintTextColor="#000"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:id="@+id/editPasswordIn"
+                android:background="@color/colorWhite"
+                android:textColor="#000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edtPassword"
+                android:text="@string/t_t_tsign_in_t_t_t"
+                android:textSize="16sp"
+                android:id="@+id/btnName"
+                android:textAllCaps="false"
+                android:layout_toEndOf="@id/forgotPassword"
+                android:background="@drawable/rounded_button"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="30dp"
+                android:padding="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forgot_password"
+                android:layout_marginTop="42dp"
+                android:layout_below="@id/edtPassword"
+                android:layout_alignParentEnd="true"
+                android:textSize="16sp"
+                android:id="@+id/forgotPassword"
+                android:layout_alignParentStart="false"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_have_an_account"
+                android:textSize="18sp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="false"
+                android:textStyle="normal"
+                android:id="@+id/newUserText"
+                android:layout_below="@id/btnName"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:id="@+id/newUserTextSign"
+                android:layout_width="198dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnName"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/newUserText"
+                android:layout_alignParentEnd="true"
+                android:text="@string/sign_up"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or_sign_in_with"
+            android:textSize="16sp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/singInText"
+            android:layout_below="@id/newUserTextSign"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="75dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/singInText"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/googleSign"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/google" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+        <include
+            layout="@layout/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

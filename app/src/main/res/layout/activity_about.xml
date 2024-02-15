@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorGrey"
+    android:orientation="vertical"
+    tools:context=".general.AboutActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/welcomeAppBar"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                app:elevation="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGrey">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/welcomeToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:id="@+id/closeButton"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:layout_weight="0.1"
+                            android:visibility="visible"
+                            app:tint="@color/colorPrimary"
+                            android:contentDescription="@string/backbutton"
+                            android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="?attr/actionBarSize"
+                            android:layout_weight="1.9"
+                            android:gravity="center_vertical"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="0dp"
+                            android:text="@string/about_us"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/cabin"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/welcomeAppBar"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/semi_circle"
+                android:orientation="vertical">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/loadingAnimationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="100dp"
+                    android:visibility="gone"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    app:lottie_url="https://assets4.lottiefiles.com/private_files/lf30_nIhxTu.json"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rlTeam">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/stumateWideBanner"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/stumate_wide"
+                        android:contentDescription="@string/app_name" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/version_1_0_0"
+                        android:textSize="13sp"
+
+                        android:id="@+id/versionNumber"
+                        android:textStyle="bold"
+                        android:layout_below="@id/stumateWideBanner" />
+
+<!--
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:id="@+id/versionDivider"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorGrey"
+                        android:layout_below="@id/versionNumber"
+-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/aboutApp"
+                            android:layout_marginTop="25dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_centerHorizontal="false"
+                            android:text="@string/about_stumate"
+                            android:layout_below="@id/versionNumber"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_height="3dp"
+                        android:id="@+id/aboutDivider"
+                        android:layout_below="@id/aboutApp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/txtStumate"
+                        android:layout_width="match_parent"
+                        android:layout_below="@id/aboutDivider"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/stumate_is_a_realm_for_students_who_are_willing_to_store_all_the_subject_files_at_a_place_it_acts_like_a_container_and_one_can_filter_notes_at_any_time_with_a_perfect_blend_of_professionalism_we_act_as_a_catalyst_to_bring_the_required_change_in_the_society"
+                        android:layout_marginRight="10dp"
+                        android:gravity="start"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quot_start_succeding_stop_seeking_quot"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:id="@+id/quote"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@id/txtStumate" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/quote"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/divider"
+                        android:background="@color/colorGrey" />
+
+
+                    <TextView
+                        android:id="@+id/txtDeveloped"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/developed_by"
+                        android:textStyle="bold"
+                        android:layout_below="@id/divider"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/cabin"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:layout_marginStart="10dp" />
+
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_height="3dp"
+                        android:id="@+id/developedDivider"
+                        android:layout_below="@id/txtDeveloped"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorPrimary" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/saikiranLayout"
+                        android:layout_below="@+id/developedDivider"
+                        android:layout_marginTop="20dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            app:cardElevation="10dp"
+                            android:id="@+id/imageCard"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="60dp">
+
+                             <ImageView
+                                 android:layout_width="90dp"
+                                 android:layout_height="90dp"
+                                 android:id="@+id/imageView"
+                                 android:src="@drawable/saikiran"
+                                 android:scaleType="centerCrop"
+                                 android:contentDescription="@string/app_name" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mr_saikiran_kopparthi"
+                            android:layout_toEndOf="@id/imageCard"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginEnd="25dp"
+                            android:fontFamily="@font/cabin"
+                            android:textColor="#000"
+                            android:id="@+id/txtName"
+                            android:gravity="center_horizontal"
+                            android:textSize="16sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtName"
+                            android:layout_toEndOf="@id/imageCard"
+                            android:text="@string/t3rd_year_it_t"
+                            android:id="@+id/txtDept"
+                            android:background="@drawable/blue_bg_textview"
+                            android:textColor="@color/colorPrimary"
+                            android:padding="5dp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/colorGrey"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtName"
+                            android:layout_toEndOf="@id/txtDept"
+                            android:text="@string/android_developer"
+                            android:layout_alignParentEnd="true"
+                            android:id="@+id/txtRole"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:textStyle="bold"
+                            android:background="@drawable/blue_bg_textview"
+                            android:textColor="@color/colorPrimary"
+                            android:padding="5dp"
+                            android:backgroundTint="@color/colorGrey"
+                            android:gravity="center_horizontal" />
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="2dp"
+                            android:layout_margin="8dp"
+                            android:background="@color/colorGrey"
+                            android:layout_below="@id/imageCard" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/prathyushaLayout"
+                        android:layoutDirection="rtl"
+                        android:layout_below="@id/saikiranLayout">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            app:cardElevation="10dp"
+                            android:id="@+id/imageCard2"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="60dp">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:src="@drawable/prathyushanew"
+                                android:contentDescription="@string/app_name"
+                                android:layout_height="90dp"
+                                android:scaleType="centerCrop"
+                                android:id="@+id/imageView2" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ms_prathyusha_kuppili"
+                            android:layout_toEndOf="@id/imageCard2"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginEnd="25dp"
+                            android:fontFamily="@font/cabin"
+                            android:textColor="#000"
+                            android:id="@+id/txtName2"
+                            android:gravity="center_horizontal"
+                            android:textSize="16sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtName2"
+                            android:layout_toEndOf="@id/imageCard2"
+                            android:text="@string/t3rd_year_it_t2"
+                            android:id="@+id/txtDept2"
+                            android:background="@drawable/blue_bg_textview"
+                            android:textColor="@color/colorPrimary"
+                            android:padding="5dp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/colorGrey"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtName2"
+                            android:layout_toEndOf="@id/txtDept2"
+                            android:text="@string/android_developer"
+                            android:layout_alignParentEnd="true"
+                            android:id="@+id/txtRole2"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:textStyle="bold"
+                            android:background="@drawable/blue_bg_textview"
+                            android:textColor="@color/colorPrimary"
+                            android:padding="5dp"
+                            android:backgroundTint="@color/colorGrey"
+                            android:gravity="center_horizontal" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/rlTeam"
+                    android:background="@color/colorGrey"
+                    android:id="@+id/layoutDivider" />
+
+
+                <TextView
+                    android:id="@+id/txtFeedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit_feedback"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@id/layoutDivider"
+                    android:fontFamily="@font/cabin"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:layout_marginStart="10dp" />
+
+                <View
+                    android:layout_width="130dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_height="3dp"
+                    android:id="@+id/feedbackDivider"
+                    android:layout_below="@id/txtFeedback"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtFeedDesc"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/feedbackDivider"
+                    android:text="@string/we_will_hear_your_feedback_and_suggestions_and_try_to_add_new_features_based_on_your_request_thanks_for_using_stumate" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/knvrssaikiran_gmail_com"
+                    android:layout_below="@id/txtFeedDesc"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/emailID"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    app:drawableStartCompat="@drawable/ic_baseline_mail_outline_24"
+                    app:drawableTint="@color/colorPrimary" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/please_give_your_valuable_feedback"
+                    android:layout_below="@id/emailID"
+                    android:id="@+id/edtFeedback"
+                    android:background="@color/colorWhite"
+                    app:endIconTint="#000"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:visibility="visible"
+                    app:errorEnabled="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    app:hintTextColor="#000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/editFeedback"
+                        android:inputType="text"
+                        android:background="@color/colorWhite"
+                        android:textColor="#000" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit_feedback"
+                    android:textAllCaps="false"
+                    android:layout_alignParentStart="true"
+                    android:id="@id/btnSubmit"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/rounded_button"
+                    android:layout_below="@id/edtFeedback" />
+
+                <com.google.android.gms.ads.AdView
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/adView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="50dp"
+                    android:layout_below="@id/btnSubmit"
+                    ads:adSize="MEDIUM_RECTANGLE"
+                    ads:adUnitId="@string/admob_large_banner">
+                </com.google.android.gms.ads.AdView>
+
+
+
+                <!--  -->
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomnav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        app:fabAnimationMode="scale"
+        app:hideOnScroll="true"
+        app:fabCradleMargin="8dp"
+        app:navigationIcon="@drawable/ic_baseline_menu_24"
+        app:fabAlignmentMode="end"
+        app:fabCradleRoundedCornerRadius="60dp"
+        app:navigationContentDescription="@string/app_name"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_anchorGravity="center"
+        app:tint="@color/colorAccent"
+        android:src="@drawable/ic_baseline_add_24"
+        app:borderWidth="0dp"
+        android:id="@+id/uploadFilesButton"
+        app:layout_anchor="@id/bottomnav"
+        android:contentDescription="@string/app_name" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
